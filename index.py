@@ -11,4 +11,11 @@ def portscan(port):
     except:
         return False 
 
-print(portscan(80)) # enter port to scan
+# scans every port in the range
+for port in range(1,1024):
+    result = portscan(port)
+    if result:
+        print("Port {} is open".format(port))
+    else:
+        print("Port {} is closed".format(port))
+
